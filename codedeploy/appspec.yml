@@ -1,0 +1,12 @@
+version: 0.0
+os: windows
+files: 
+  - source: \test.txt
+    destination: c:\
+hooks:
+  BeforeInstall:
+    - location: \codedeploy\before-install.ps1
+      timeout: 900
+  ValidateService:
+    - location: \codedeploy\validate-service.ps1
+      timeout: 900
